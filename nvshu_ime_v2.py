@@ -1301,7 +1301,8 @@ class FontManager:
 
 def main():
     # 启用输出刷新，确保调试信息实时显示
-    sys.stdout.reconfigure(line_buffering=True)
+    if sys.stdout:
+        sys.stdout.reconfigure(line_buffering=True)
 
     QApplication.setHighDpiScaleFactorRoundingPolicy(
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
